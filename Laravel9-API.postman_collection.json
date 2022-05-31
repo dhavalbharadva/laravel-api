@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "14c873e7-604e-4d34-a2db-4d4fbedaddaa",
+		"name": "Laravel9-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3982265"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "dhaval.svipl@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "dhaval",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				]
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"shipping_address\":\"MD Street, Chris Road, UK\",\n    \"billing_address\":\"Fun House, Old street, Uk\",\n    \"item\":[\n    {\n        \"id\":5,\n        \"quantity\":2\n    },\n    {\n        \"id\":6,\n        \"quantity\":1\n    },\n    {\n        \"id\":7,\n        \"quantity\":3\n    }\n]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/order/store",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "order_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/order/update-status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"update-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delayed Orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/orders/delayed",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"delayed"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDlkYWE4YWZmZjcxOWU5ZGNiOWVjMmE5MzhiZWZkOGQxMzhjZWRkNGMxZjFlOWVlZjhkYjQ4ZjEwOTcyNDgzMmVlNDE4YWQxYTM1NjViY2EiLCJpYXQiOjE2NTM5MTU0MDQuODMzOTAzLCJuYmYiOjE2NTM5MTU0MDQuODMzOTA5LCJleHAiOjE2ODU0NTE0MDQuODMxODA0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QjqJEo0uxZ0bsc6kqY1gYFljtMnioEyV8bKQYRFrC_4BgdayJqXVyNN8RAYRQ29GmZsw0FF3nqAKpiZpAbDBg2LOZ3B85sWA7MD8MblAU4DuQpJcPiCAPt2AhSNxSXsAwQN0fyj4j2QrnM0VAUfKylXmZkwN0xtLmWyhj3_ZCc5zvWD_vJJ5QWD8jgNSGEY9iQEoUFEx-KMNZBVinAZHS9Vg8c6H7WCGq7S5WIPF06Dd-6g7AsjHaJGPiQ8C6Shd0qhi2Ne_0crj_yikFgBSVaoaQk6b9kC7QZ41DV2v48PvLK8X0vmupTwyKCAFjndUjvVYaiwHQ1lwK_H_aZxdsk9krYC8W-IuCr4IT6tAQgf9OfLnMKDTbnMHewU8KQl_jDLbvJNTiWBTbpfPzdFrqI1_Zoe8iE1zoK5H4HYLg5nEw9xVP9DlwCblacXoBQHz-kpPBMTHV2I725edJ1Q1xFCHSBviINmvecP6OZxzgAsWrWaVFSPd31oCQSJwW6hnhAc1zhccDz1xS3dDvRN4Sk9wzWoGq_QaLIas8J6cO71YYQTHce03vEW2vc7QD7GbbBjS_oyEYmhSGE3gEkgeSPZkBPqdq0bTW39UeZ4cpEz5IYdyg_bHDR2IZ1tCUKCQa6Bu8C8GNk-5CtXoZxvmyWjDKpN23LGGBZyPj0DE9Ik",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://dh.laravel-api.svs02",
+			"type": "string"
+		}
+	]
+}
