@@ -44,21 +44,9 @@ return [
     | i.e. title, meta title, keywords, description
     |  
     */
-    'title' => 'Welcome To  Laravel Forecast',
-    'metaTitle' => 'Welcome To  Laravel Forecast',
-    'metaKeywords' => 'Welcome To  Laravel Forecast',
-    'metaDescription' => 'Welcome To  Laravel Forecast',
-    
-    
-    /*
-    |--------------------------------------------------------------------------
-    | Number of days for forecast
-    |--------------------------------------------------------------------------
-    |
-    | User can get forecast data of these number of days
-    | You may wish to change that limit from here
-    |  
-    */
-    'no_of_days' => 7,
+    'title' => 'Welcome To  Laravel API',
+    'metaTitle' => 'Welcome To  Laravel API',
+    'metaKeywords' => 'Welcome To  Laravel API',
+    'metaDescription' => 'Welcome To  Laravel API',
     
 ];
